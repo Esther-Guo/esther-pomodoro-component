@@ -1,7 +1,29 @@
 {
   "name": "esther-pomodoro-component",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esther-Guo/esther-pomodoro-component.git"
+  },
+  "keywords": [
+    "react",
+    "pomodoro",
+    "components"
+  ],
+  "author": "Esther Guo",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -15,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "(if exist dist rmdir /s /q dist) && mkdir dist && babel ./src/components -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/preset-react": "^7.16.7"
   }
 }
